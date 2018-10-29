@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // Represents Controller in MVC
 class ViewController: UIViewController {
     
@@ -83,10 +84,12 @@ class ViewController: UIViewController {
         let correctAnswer = allQuestions.list[questionNumber].answer
         
         if correctAnswer == pickedAnswer {
-            print("You got it!")
+            //print("You got it!")
+            ProgressHUD.showSuccess("Correct")
             score += 1
         }else{
-            print("Wrong!")
+            //print("Wrong!")
+            ProgressHUD.showError("Wrong!")
         }
     }
     
