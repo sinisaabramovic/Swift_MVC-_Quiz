@@ -49,7 +49,10 @@ class ViewController: UIViewController {
         // or we can use
         //scoreLabel.text = "Score: \(score)"
         
-        progressLabel.text = "\(questionNumber) / \(allQuestions.list.count)"
+        progressLabel.text = "\(questionNumber + 1) / \(allQuestions.list.count)"
+        let frameSize : CGSize = view.frame.size
+        let progressBarSize : CGSize = progressBar.frame.size
+        progressBar.frame.size = CGSize(width: (frameSize.width / CGFloat(allQuestions.list.count)) * CGFloat(questionNumber + 1), height: progressBarSize.height)
     }
     
 
@@ -89,7 +92,8 @@ class ViewController: UIViewController {
     
     
     func startOver() {
-       questionNumber = 0
+        questionNumber = 0
+        score = 0
         nextQuestion()
     }
     
